@@ -2,7 +2,7 @@
  * API Client for P1 Strategy Builder
  */
 
-// P1: Frontend 3000 → Backend 8000 (via Next.js rewrites proxy)
+// P1: Frontend 3001 → Backend 8000 (via Next.js rewrites proxy)
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "";
 
 export interface ApiResponse<T> {

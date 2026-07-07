@@ -1,17 +1,18 @@
 #!/bin/bash
 # P1 Strategy Builder - Start Script
-# Frontend: 3000, Backend: 8000
+# Frontend: 3001, Backend: 8000
+# NOTE: 프론트엔드는 3001 사용 — 3000 은 kis-trade-mcp 컨테이너가 점유하므로 회피.
 
 # Get absolute path of script directory
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 echo "=== P1 Strategy Builder ==="
-echo "Frontend: http://localhost:3000"
+echo "Frontend: http://localhost:3001"
 echo "Backend:  http://localhost:8000"
 echo ""
 
-# Kill existing processes on these ports
-lsof -ti:3000 | xargs kill -9 2>/dev/null
+# Kill existing processes on these ports (3000 은 건드리지 않는다 — MCP 보호)
+lsof -ti:3001 | xargs kill -9 2>/dev/null
 lsof -ti:8000 | xargs kill -9 2>/dev/null
 
 # Start backend
@@ -31,7 +32,7 @@ fi
 
 # Start frontend
 cd "$SCRIPT_DIR/frontend"
-echo "[Frontend] Starting on port 3000..."
+echo "[Frontend] Starting on port 3001..."
 npm run dev &
 FRONTEND_PID=$!
 

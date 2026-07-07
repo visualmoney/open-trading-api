@@ -36,9 +36,11 @@ cd strategy_builder
 ./start.sh
 ```
 
-백엔드(8000)와 프론트엔드(3000)를 한 번에 시작합니다. `node_modules`가 없으면 `npm install`도 자동 실행됩니다.
+백엔드(8000)와 프론트엔드(3001)를 한 번에 시작합니다. `node_modules`가 없으면 `npm install`도 자동 실행됩니다.
 
-브라우저에서 http://localhost:3000 으로 접속하면 전략 빌더 페이지가 표시됩니다.
+> 프론트엔드는 **3001** 포트를 사용합니다 (3000 은 `kis-trade-mcp` 컨테이너가 점유하므로 회피).
+
+브라우저에서 http://localhost:3001 으로 접속하면 전략 빌더 페이지가 표시됩니다.
 
 **수동 실행이 필요할 때**
 
@@ -62,7 +64,7 @@ npm run dev
 ```
 ┌──────────────────────────────────────────────────────────┐
 │                    Frontend (Next.js)                     │
-│                   http://localhost:3000                   │
+│                   http://localhost:3001                   │
 │                                                          │
 │   /builder                      /execute                 │
 │   전략 설계 (빌더)               전략 실행 (시그널+주문)    │
@@ -334,7 +336,7 @@ strategy_builder/
 │   ├── base_strategy.py        # BaseStrategy 클래스
 │   └── strategy_01 ~ 10.py    # 10개 전략 파일
 │
-├── frontend/                   # Next.js 프론트엔드 (port 3000)
+├── frontend/                   # Next.js 프론트엔드 (port 3001)
 │   └── src/
 │       ├── app/
 │       │   ├── builder/        # 전략 빌더 페이지

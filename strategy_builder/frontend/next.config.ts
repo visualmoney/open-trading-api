@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // P1: Frontend 3000, Backend 8000
+  // P1: Frontend 3001, Backend 8000
   async rewrites() {
     return [
       {
